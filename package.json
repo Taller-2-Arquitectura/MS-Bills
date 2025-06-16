@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "npx prisma generate --schema=prisma/mariadb/schema.prisma && npx prisma generate --schema=prisma/mariadbBill/schema.prisma && npx prisma generate --schema=prisma/postgres/schema.prisma",
-    "migrate": "npx prisma db push --schema=prisma/mariadb/schema.prisma && npx prisma db push --schema=prisma/mariadbBill/schema.prisma && npx prisma db push --schema=prisma/postgres/schema.prisma",
-    "seed": "node src/database/seeders/seed.js"
+    "build": "npx prisma generate --schema=prisma/mariadb/schema.prisma && npx prisma generate --schema=prisma/mariadbBill/schema.prisma",
+    "migrate": "npx prisma db push --schema=prisma/mariadb/schema.prisma && npx prisma db push --schema=prisma/mariadbBill/schema.prisma",
+    "seed": "node src/database/seed/seed.js"
   },
   "keywords": [],
   "author": "",
