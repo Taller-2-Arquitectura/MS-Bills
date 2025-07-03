@@ -1,4 +1,4 @@
-const { mariadbBill, mariadb } = require("../database/prisma");
+const { mariadbBill } = require("../database/prisma");
 
 const validStates = ["Pendiente", "Pagado", "Vencido"];
 
@@ -19,11 +19,6 @@ const createBill = async (call, callback) => {
 
   if (!Number.isInteger(quantity) || quantity <= 0) {
     return callback({ code: 3, message: "El monto debe ser positivo" });
-  }
-
-  const user = await mariadb.users.findUnique({ where: { id: userId } });
-  if (!user) {
-    return callback({ code: 5, message: "El usuario no existe" });
   }
 
   const newBill = await mariadbBill.bills.create({
